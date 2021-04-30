@@ -6,6 +6,7 @@ const PokemonCard = ({ item }) => {
       <div className={style.name}>{item.name}</div>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png`}
+        alt={`pokemon ${item.name}`}
       />
       <div>
         <div className={style.statsTitle}>STATS</div>
