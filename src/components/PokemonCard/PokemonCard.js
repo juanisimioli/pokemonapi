@@ -1,6 +1,8 @@
-const PokemoCard = ({ item }) => {
+import style from "./pokemonCard.module.scss";
+
+const PokemonCard = ({ item }) => {
   return (
-    <div style={{ border: "1px solid black", width: "200px", margin: "5px" }}>
+    <div className={style.container}>
       <div>{item.name}</div>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png`}
@@ -17,4 +19,4 @@ const PokemoCard = ({ item }) => {
   );
 };
 
-export default PokemoCard;
+export default PokemonCard;

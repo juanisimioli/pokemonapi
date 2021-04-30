@@ -1,10 +1,11 @@
-import PokemoCard from "../PokemonCard/PokemonCard";
+import PokemonCard from "../PokemonCard/PokemonCard";
+import style from "./pokemonContainer.module.scss";
 
 const PokemonContainer = ({ pokemons }) => {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div className={style.container}>
       {pokemons.map((item, index) => {
-        return <PokemoCard item={item} key={`card_${index}`} />;
+        return <PokemonCard item={item} key={`card_${index}`} />;
       })}
     </div>
   );
