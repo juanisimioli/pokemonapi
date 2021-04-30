@@ -5,11 +5,14 @@ import { fetchPokemonsUrls, fetchPokemon } from "../helper";
 const PokemonPage = () => {
   const [pokemons, setPokemons] = useState([]);
 
-  useEffect(async () => {
-    const pokemonsData = await fetchPokemonsUrls();
-    const pokemonsUrls = pokemonsData.map((pokemon) => pokemon.url);
-    const allPokemons = await Promise.all(fetchPokemon(pokemonsUrls));
-    setPokemons(allPokemons);
+  useEffect(() => {
+    async function fetchData() {
+      const pokemonsData = await fetchPokemonsUrls();
+      const pokemonsUrls = pokemonsData.map((pokemon) => pokemon.url);
+      const allPokemons = await Promise.all(fetchPokemon(pokemonsUrls));
+      setPokemons(allPokemons);
+    }
+    fetchData();
   }, []);
 
   return <PokemonContainer pokemons={pokemons} />;
