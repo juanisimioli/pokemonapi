@@ -1,5 +1,27 @@
 .container {
-  border: 1px solid black;
+  border: 1px solid gray;
+  background-color: #f0ffff;
+  border-radius: 8px;
   width: 200px;
   margin: 5px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.name {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.statsTitle {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.statName {
+  text-transform: capitalize;
+  font-weight: 500;
 }

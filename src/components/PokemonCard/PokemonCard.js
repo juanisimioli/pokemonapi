@@ -3,15 +3,16 @@ import style from "./pokemonCard.module.scss";
 const PokemonCard = ({ item }) => {
   return (
     <div className={style.container}>
-      <div>{item.name}</div>
+      <div className={style.name}>{item.name}</div>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png`}
       />
       <div>
-        STATS
+        <div className={style.statsTitle}>STATS</div>
         {item.stats.map((stat, index) => (
           <div key={`stat_${index}`}>
-            {stat.stat.name} : {stat.base_stat}
+            <span className={style.statName}>{stat.stat.name}</span> :{" "}
+            {stat.base_stat}
           </div>
         ))}
       </div>
