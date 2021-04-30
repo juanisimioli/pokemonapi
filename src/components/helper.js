@@ -5,8 +5,8 @@ export const fetchPokemonsUrls = async () => {
 };
 
 export const fetchPokemon = (pokemonUrls) => {
-  return pokemonUrls.map(async (item) => {
-    const response = await fetch(item.url);
+  return pokemonUrls.map(async (url) => {
+    const response = await fetch(url);
     const pokemonData = await response.json();
     return pokemonData;
   });

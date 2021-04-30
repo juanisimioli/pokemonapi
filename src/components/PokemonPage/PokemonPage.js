@@ -6,7 +6,8 @@ const PokemonPage = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(async () => {
-    const pokemonsUrls = await fetchPokemonsUrls();
+    const pokemonsData = await fetchPokemonsUrls();
+    const pokemonsUrls = pokemonsData.map((pokemon) => pokemon.url);
     const allPokemons = await Promise.all(fetchPokemon(pokemonsUrls));
     setPokemons(allPokemons);
   }, []);
